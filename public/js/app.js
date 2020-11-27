@@ -21304,8 +21304,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp1\htdocs\Ciclismo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp1\htdocs\Ciclismo\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\tools\xampp\htdocs\ciclismo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\tools\xampp\htdocs\ciclismo\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })
