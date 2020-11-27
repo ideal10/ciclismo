@@ -28,6 +28,7 @@ class CreateParticipantesTable extends Migration
                 ->nullable(true);
             $table->timestamp('tiempoLlegada', 0)   // Momento en el que llego el participante.
                 ->nullable(true);
+            $table->timestamps();
         });
     }
 
