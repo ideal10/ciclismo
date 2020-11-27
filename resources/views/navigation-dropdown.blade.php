@@ -84,7 +84,10 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('module0/menu0') }}" :active="request()->routeIs('module0/menu0')">
-                {{ __('Dashboard') }}
+                {{ __('Procesos') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('module0/menu1') }}" :active="request()->routeIs('module0/menu1')">
+                {{ __('Herramientas') }}
             </x-jet-responsive-nav-link>
         </div>
 
