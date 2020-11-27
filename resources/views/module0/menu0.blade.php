@@ -1,3 +1,3 @@
 <x-app-layout>
-    <livewire:menu0 />
+    <x-menu0-nav />
 </x-app-layout>
