@@ -28,6 +28,9 @@
     "Delete Account": "Borrar Cuenta",
     "Permanently delete your account.": "Elimina permanentemente tu cuenta.",
     "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.": "Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.",
-    "LOGOUT OTHER BROWSER SESSIONS": "Cerrar todas las sesiones"
+    "Logout Other Browser Sessions": "Cerrar todas las sesiones",
+    "The provided password does not match your current password.": "La contraseña proporcionada no coincide con su contraseña actual.",
+    "The password confirmation does not match.": "La confirmación de la contraseña no coincide",
+    "The password must be at least 8 characters.": "La contraseña debe tener al menos 8 caracteres."
 
 }
