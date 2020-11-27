@@ -37,12 +37,18 @@
     "Email Password Reset Link": "Reestablecer contraseña",
     "For your security, please confirm your password to continue.": "Por su seguridad, confirme su contraseña para continuar.",
     "Confirm": "Confirmar",
-    "Nevermind": "No importa",
+    "Nevermind": "Cancelar",
     "Two factor authentication is now enabled. Scan the following QR code using your phone's authenticator application.": "La autenticación de dos factores ahora está habilitada. Escanee el siguiente código QR utilizando la aplicación de autenticación de su teléfono.",
     "Store these recovery codes in a secure password manager. They can be used to recover access to your account if your two factor authentication device is lost.": "Guarde estos códigos de recuperación en un administrador de contraseñas seguro. Se pueden usar para recuperar el acceso a su cuenta si pierde su dispositivo de autenticación de dos factores.",
     "Regenerate Recovery Codes" : "Regenerar códigos de recuperación",
     "Show Recovery Codes" : "Mostrar códigos de recuperación",
     "Disable": "Desactivar",
-    "Name": "Nombre"
+    "Name": "Nombre",
+    "Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.": "¿Estás seguro de que deseas eliminar tu cuenta? Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Ingrese su contraseña para confirmar que desea eliminar permanentemente su cuenta.",
+    "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.": "Ingrese su contraseña para confirmar que desea cerrar la sesión de sus otras sesiones de navegador en todos sus dispositivos.",
+    "Saved.": "Guardado con exito!",
+    "The current password field is required.": "El campo de contraseña actual es obligatorio.",
+    "The password field is required.": "El campo de contraseña es obligatorio. "
+
 
 }
