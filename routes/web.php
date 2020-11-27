@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('module');
-});
+Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
+    return view('module0.menu0');
+})->name('module0/menu0');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/module0/menu0', function () {
+    return view('module0.menu0');
+})->name('module0/menu0');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/module0/menu1', function () {
+    return view('module0.menu1');
+})->name('module0/menu1');
