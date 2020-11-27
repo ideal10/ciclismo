@@ -1,3 +1,5 @@
 <div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+    {{ $message }}
+    <br>
+    <button type="button" wire:click="submit">{{ __('Submit') }}</button>
 </div>

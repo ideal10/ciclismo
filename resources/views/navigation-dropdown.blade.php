@@ -13,12 +13,12 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('module0/menu0') }}" :active="request()->routeIs('module0/menu0')">
-                        {{ __('Ejecuciones') }}
+                        {{ __('Procesos') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('module0/menu1') }}" :active="request()->routeIs('module0/menu1')">
-                        {{ __('Archivos Maestros / Categorizaciones') }}
+                        {{ __('Herramientas') }}
                     </x-jet-nav-link>
                 </div>
             </div>
