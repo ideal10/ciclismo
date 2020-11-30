@@ -15,7 +15,7 @@ class CreateParticipantesTable extends Migration
     {
         Schema::create('participantes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 20);           // Nombre del participante.
+            $table->string('nombre');           // Nombre del participante.
             $table->integer('identificacion');      // Identificacion personal del participante.
             $table->date('fechaNacimiento');        // Fecha de nacimiento del participante.
             $table->integer('edad')                 // Edad del participante.
