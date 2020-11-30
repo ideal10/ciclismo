@@ -17,7 +17,7 @@ class CreateParticipantesTable extends Migration
             $table->id();
             $table->string('nombre', 20);           // Nombre del participante.
             $table->integer('identificacion');      // Identificacion personal del participante.
-            $table->year('fechaNacimiento');        // Fecha de nacimiento del participante.
+            $table->date('fechaNacimiento');        // Fecha de nacimiento del participante.
             $table->integer('edad')                 // Edad del participante.
                 ->nullable(true);
             $table->integer('valorInscripcion');    // Valor de la inscripcion del participante.
