@@ -16,17 +16,17 @@ class CreateParticipantesTable extends Migration
         Schema::create('participantes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');           // Nombre del participante.
-            $table->integer('identificacion');      // Identificacion personal del participante.
+            $table->integer('identificacion');      // Identificación personal del participante.
             $table->date('fechaNacimiento');        // Fecha de nacimiento del participante.
             $table->integer('edad')                 // Edad del participante.
                 ->nullable(true);
-            $table->integer('valorInscripcion');    // Valor de la inscripcion del participante.
-            $table->integer('numeroAsignado');      // Numero unico de identificacion asignado para el participante.
+            $table->integer('valorInscripcion');    // Valor de la inscripción del participante.
+            $table->integer('numeroAsignado');      // Numero único de identificación asignado para el participante.
             $table->integer('idCategoria')          // Categoria del participante.
                 ->nullable(true);
-            $table->timestamp('tiempoSalida', 0)    // Momento en el que salio el participante.
+            $table->timestamp('tiempoSalida', 0)    // Momento en el que salió el participante.
                 ->nullable(true);
-            $table->timestamp('tiempoLlegada', 0)   // Momento en el que llego el participante.
+            $table->timestamp('tiempoLlegada', 0)   // Momento en el que llegó el participante.
                 ->nullable(true);
             $table->timestamps();
         });

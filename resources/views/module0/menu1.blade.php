@@ -1,3 +1,3 @@
 <x-app-layout>
-    <x-menu0-nav />
+    <x-menu1-nav />
 </x-app-layout>

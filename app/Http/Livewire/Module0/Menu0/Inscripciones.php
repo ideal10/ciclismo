@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Module0\Menu0;
 
 use Livewire\Component;
 use App\Models\Participante;
-use Faker\Factory as Faker;
+use App\Models\Categoria;
 
 class Inscripciones extends Component
 {
@@ -66,6 +66,27 @@ class Inscripciones extends Component
 
     public function render()
     {
-        return view('livewire.module0.menu0.inscripciones', ['participantes' => Participante::all()]);
+        $categorias = array();
+        $participantes = Participante::all();
+
+        foreach($participantes as $participante)
+        {
+            if($participante->idCategoria != null)
+            {
+                $categoria = Categoria::withTrashed()->find($participante->idCategoria);
+                if($categoria->trashed())
+                    $categorias[$participante->id] = 'Sin Asignar';
+                else
+                {
+                    $categorias[$participante->id] = $categoria->nombre;
+                }
+            }
+            else
+            {
+                $categorias[$participante->id] = 'Sin Asignar';
+            }
+        }
+
+        return view('livewire.module0.menu0.inscripciones', ['participantes' => $participantes, 'categorias' => $categorias]);
     }
 }

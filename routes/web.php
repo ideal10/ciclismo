@@ -32,3 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/module0/menu0/ordensalida
 Route::middleware(['auth:sanctum', 'verified'])->get('/module0/menu1', function () {
     return view('module0.menu1');
 })->name('module0/menu1');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/module0/menu1/establecercategorias', function () {
+    return view('module0.menu1.establecercategorias');
+})->name('module0/menu1/establecercategorias');
