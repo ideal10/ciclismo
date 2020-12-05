@@ -15,10 +15,12 @@ class CreateCategoriasTable extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_carrera')->constrained('carreras');
             $table->string('nombre');
             $table->longText('descripcion');
-            $table->integer('limite_superior');
             $table->integer('limite_inferior');
+            $table->integer('limite_superior');
+            $table->time('salida');
             $table->timestamps();
         });
     }
