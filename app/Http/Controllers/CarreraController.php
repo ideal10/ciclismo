@@ -45,7 +45,9 @@ class CarreraController extends Controller
             'valor_inscripcion' => 'required'
         ]);*/
 
-        Carrera::create($request->all());
+        $carrera = Carrera::make($request->all());
+        $carrera->id_grupo = $request->user()->currentTeam->id;
+        $carrera->save();
 
         return redirect()->route('carrera.index')
             ->with('success', 'Carrera Creada Satisfactoriamente.');
