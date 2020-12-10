@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-gray-700 border-b border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -11,10 +11,33 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
+                <div class="hidden space-x-8 my-1 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="navbar">
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <a href="{{ route('dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
+                            <button>
+                        </div>
+                        <x-dropdown-nav-menu>
+                            <x-slot name="displayname">
+                                {{ __('Archivos Maestros') }}
+                            </x-slot>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Indexar Carreras') }}
+                            </x-dropdown-nav-link>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Indexar Categorias') }}
+                            </x-dropdown-nav-link>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Indexar Terceros') }}
+                            </x-dropdown-nav-link>
+                        </x-dropdown-nav-menu>
+                    </div>
                 </div>
             </div>
 
@@ -27,7 +50,7 @@
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             </button>
                         @else
-                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button class="flex items-center text-sm font-medium text-white hover:text-gray-300 hover:border-gray-300 focus:outline-none focus:text-gray-300 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <div>{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
