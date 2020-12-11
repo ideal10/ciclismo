@@ -69,7 +69,7 @@ jobs:
       - run: php artisan migrate --env=testing --database=mysql --force
       
       # generate key
-      
+      - run: touch .env
       - run: php artisan key:generate
 
       # run tests with phpunit or codecept
