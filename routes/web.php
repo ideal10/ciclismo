@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\TerceroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,12 @@ use App\Http\Controllers\CarreraController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('/db/carrera', CarreraController::class);
+
+Route::middleware(['auth:sanctum', 'verified'])->resource('/db/tercero', TerceroController::class);

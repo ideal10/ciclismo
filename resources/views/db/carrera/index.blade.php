@@ -4,16 +4,23 @@
     </x-slot>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl bg-gray-800 text-white leading-tight">
+        <h2 class="font-semibold text-xl text-white leading-tight">
             {{ __('Indexar Carreras') }}
         </h2>
     </x-slot>
 
     <div class="grid">
-        <div class="bg-gray-700 text-white rounded-md m-3 box-content p-2">
-            <a href="{{ route('carrera.create') }}">Crear Carrera</a>
-        </div>
-        <div class="bg-gray-700 text-white rounded-md m-6 box-content p-3">
+        @isset($failure)
+            <div class="bg-gray-700 text-white rounded-md m-3 box-content p-2">
+                <p class="bg-red-200 text-red-400 rounded-md m-3 box-content p-2">{{ $failure }}</p>
+            </div>
+        @endisset
+        @isset($success)
+            <div class="bg-gray-700 text-white rounded-md m-3 box-content p-2">
+                <p class="bg-emerald-200 text-green-400 rounded-md m-3 box-content p-2">{{ $success }}</p>
+            </div>
+        @endisset
+        <div class="text-white rounded-md m-6 box-content p-3" style="background-color:#333;">
             @if($carreras->isNotEmpty())
                 <table class="table-auto">
                     <thead>
@@ -32,7 +39,7 @@
                                 <td class="border border-white px-2 py-1">{{ $carrera->subtitulo }}</td>
                                 <td class="border border-white px-2 py-1">{{ $carrera->fecha_carrera }}
                                 <td class="border border-white px-2 py-1">{{ $carrera->lugar_inicio }}</td>
-                                <td class="border border-white px-2 py-1">${{ $carrera->valor_inscripcion }}</td>
+                                <td class="border border-white px-2 py-1">{{ '$'.$carrera->valor_inscripcion }}</td>
                             </tr>
                         @endforeach
                     </tbody>

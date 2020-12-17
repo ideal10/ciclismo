@@ -25,6 +25,7 @@ class CreateTercerosTable extends Migration
             $table->string('direccion')->nullable();
             $table->date('fecha_nacimiento');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ $title }} - {{ config('app.name', 'Ciclismo') }}</title>
@@ -13,10 +12,14 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/ico">
+
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+
         <style>
             .navbar {
                 overflow: hidden;
@@ -69,13 +72,69 @@
             }
         </style>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-800">
-            @livewire('navigation-dropdown')
+    <body class="font-sans antialiased overflow-hidden">
+        <div class="min-h-screen" style="background-color:#222;">
+
+            <div class="flex">
+                <img src="{{ asset('images/Ciclismo-Banner1.png') }}">
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 pl-5 my-1 sm:-my-px sm:flex" style="padding-top:40px;">
+                    <div class="navbar">
+                        <x-dropdown-nav-menu>
+                            <x-slot name="displayname">
+                                {{ __('Insumos') }}
+                            </x-slot>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Categorias') }}
+                            </x-dropdown-nav-link>
+
+                            <x-dropdown-nav-link href="{{ route('tercero.index') }}">
+                                {{ __('Terceros') }}
+                            </x-dropdown-nav-link>
+                        </x-dropdown-nav-menu>
+                        <x-dropdown-nav-menu>
+                            <x-slot name="displayname">
+                                {{ __('Procesos') }}
+                            </x-slot>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Nueva Carrera') }}
+                            </x-dropdown-nav-link>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Orden de salida') }}
+                            </x-dropdown-nav-link>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Orden de llegada') }}
+                            </x-dropdown-nav-link>
+
+                            
+                        </x-dropdown-nav-menu>
+                        <x-dropdown-nav-menu>
+                            <x-slot name="displayname">
+                                {{ __('Informes') }}
+                            </x-slot>
+
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Carreras') }}
+                            </x-dropdown-nav-link>
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Tiempos en Carreras') }}
+                            </x-dropdown-nav-link>
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                                {{ __('Indexar Carreras') }}
+                            </x-dropdown-nav-link>
+                        </x-dropdown-nav-menu>
+                    </div>
+                </div>
+            </div>
 
             <!-- Page Heading -->
-            <header class="bg-gray-800">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <header style="background-color:#333;">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-gray-200">
                     {{ $header }}
                 </div>
             </header>
