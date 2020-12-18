@@ -14,7 +14,8 @@ class TerceroController extends Controller
      */
     public function index()
     {
-        return view('db.tercero.index', ['terceros' => Tercero::withTrashed()->get()]);
+        $terceros = Tercero::withTrashed()->get();
+        return view('db.tercero.index', compact('terceros'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TerceroController extends Controller
      */
     public function create()
     {
-        //
+        return view('db.tercero.create');
     }
 
     /**
@@ -35,41 +36,48 @@ class TerceroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tercero::create($request->all());
+
+        return redirect()->route('tercero.index')->with('success', 'Tercero creado satisfactoriamente.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Tercero  $tercero
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tercero $tercero)
     {
-        //
+        return view('db.tercero.show', ['tercero' => $tercero]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Tercero  $tercero
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tercero $tercero)
     {
-        //
+        return view('db.tercero.edit', ['tercero' => $tercero]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Tercero  $tercero
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tercero $tercero)
     {
-        //
+        $tercero->first_name = $request->first_name;
+        $tercero->middle_name = $request->middle_name;
+        $tercero->last_name = $request->last_name;
+        $tercero->identification = $request->identification;
+
+        $tercero->save();
     }
 
     /**
@@ -80,6 +88,17 @@ class TerceroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tercero = Tercero::withTrashed()->find($id);
+
+        if($tercero->trashed())
+        {
+            $tercero->restore();
+            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" reactivado satisfactoriamente.');
+        }
+        else
+        {
+            $tercero->delete();
+            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" desactivado satisfactoriamente.');
+        }
     }
 }

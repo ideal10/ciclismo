@@ -70,10 +70,37 @@
             .dropdown:hover .dropdown-content {
                 display: block;
             }
+
+            /* Tooltip container */
+            .tooltip {
+            position: relative;
+            display: inline-block;
+            /* border-bottom: 1px dotted black; */ /* If you want dots under the hoverable text */
+            }
+
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+            visibility: visible;
+            }
         </style>
     </head>
-    <body class="font-sans antialiased overflow-hidden">
-        <div class="min-h-screen" style="background-color:#222;">
+    <body class="font-sans antialiased">
+        <div class="min-h-screen overflow-y-auto overflow-x-hidden" style="background-color:#222;">
 
             <div class="flex">
                 <img src="{{ asset('images/Ciclismo-Banner1.png') }}">
@@ -94,25 +121,25 @@
                                 {{ __('Terceros') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
+
                         <x-dropdown-nav-menu>
                             <x-slot name="displayname">
                                 {{ __('Procesos') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                            <x-dropdown-nav-link href="{{ route('carrera.create') }}">
                                 {{ __('Nueva Carrera') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Orden de salida') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Orden de llegada') }}
                             </x-dropdown-nav-link>
-
-                            
                         </x-dropdown-nav-menu>
+
                         <x-dropdown-nav-menu>
                             <x-slot name="displayname">
                                 {{ __('Informes') }}
@@ -121,11 +148,9 @@
                             <x-dropdown-nav-link href="{{ route('carrera.index') }}">
                                 {{ __('Carreras') }}
                             </x-dropdown-nav-link>
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Tiempos en Carreras') }}
-                            </x-dropdown-nav-link>
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
-                                {{ __('Indexar Carreras') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
                     </div>
@@ -134,7 +159,7 @@
 
             <!-- Page Heading -->
             <header style="background-color:#333;">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-gray-200">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>

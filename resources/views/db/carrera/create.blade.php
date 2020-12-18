@@ -9,14 +9,8 @@
         </h2>
     </x-slot>
 
-    <x-slot name="filemenu">
-        <x-dropdown-nav-link href="{{ route('carrera.index') }}">
-            {{ __('Volver') }}
-        </x-dropdown-nav-link>
-    </x-slot>
-
     <div class="grid grid-cols-1">
-        <div class="border-blue-500 text-white rounded-md m-6 box-content p-3" style="background-color:#333;width:500px;">
+        <div class="border-blue-500 text-white rounded-md my-6 mx-auto box-content p-3" style="background-color:#333;width:500px;">
             <form action="{{ route('carrera.store') }}" method="POST">
                 @csrf
 
