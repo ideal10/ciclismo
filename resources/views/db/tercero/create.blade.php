@@ -30,16 +30,16 @@
                 @csrf
 
                 <div class="grid grid-cols-2 gap-2">
-                    <label for="primer_nombre">Primer Nombre:</label>
+                    <label for="primer_nombre">{{ __('Primer Nombre:') }}</label>
                     <input name="primer_nombre" type="text" class="text-gray-300 rounded-md box-content p-1" style="background-color:#444;">
                     
-                    <label for="segundo_nombre">Primer Nombre:</label>
+                    <label for="segundo_nombre">{{ __('Segundo Nombre:') }}</label>
                     <input name="segundo_nombre" type="text" class="text-gray-300 rounded-md box-content p-1" style="background-color:#444;">
 
-                    <label for="primer_apellido">Primer Nombre:</label>
+                    <label for="primer_apellido">{{ __('Primer Apellido:') }}</label>
                     <input name="primer_apellido" type="text" class="text-gray-300 rounded-md box-content p-1" style="background-color:#444;">
                 
-                    <label for="segundo_apellido">Primer Nombre:</label>
+                    <label for="segundo_apellido">{{ __('Segundo Apellido:') }}</label>
                     <input name="segundo_apellido" type="text" class="text-gray-300 rounded-md box-content p-1" style="background-color:#444;">
                 
                     <label for="identificacion">Identificación:</label>
