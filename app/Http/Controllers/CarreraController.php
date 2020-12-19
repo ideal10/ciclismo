@@ -95,6 +95,7 @@ class CarreraController extends Controller
      */
     public function destroy(Carrera $carrera)
     {
-        //
+        $carrera->delete();
+        return redirect()->route('carrera.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" desactivado satisfactoriamente.');
     }
 }
