@@ -4,9 +4,9 @@
     </x-slot>
     
     <x-slot name="header">
-        <h1 class="text-white font-semibold text-xl leading-tight">
-            {{ __('Bienvenido') }}
-        </h1>
+        <h2 class="text-white font-semibold text-xl leading-tight">
+            {{ __('Bienvenido, ').auth()->user()->name }}
+        </h2>
     </x-slot>
 
     <div class="py-12">
