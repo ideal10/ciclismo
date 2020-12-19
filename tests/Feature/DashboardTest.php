@@ -12,6 +12,18 @@ class DashboardTest extends TestCase
     use RefreshDatabase;
 
     /**
+     * setUp function
+     * 
+     * @return void
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->seed(); // Seed the database
+    }
+
+    /**
      * Test the welcome message of the dashboard as a random user.
      *
      * @return void
