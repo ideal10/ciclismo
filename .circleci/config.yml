@@ -69,7 +69,7 @@ jobs:
       - run: php artisan migrate --env=testing --database=mysql --force
 
       # run tests with phpunit or codecept
-      - run: ./vendor/bin/phpunit
+      - run: ./vendor/bin/phpunit --log-junit tests/_output/junit.xml tests
       # this example uses codecept but you're not limited to it
       #- run: ./vendor/bin/codecept build
       #- run: ./vendor/bin/codecept run --xml result.xml
