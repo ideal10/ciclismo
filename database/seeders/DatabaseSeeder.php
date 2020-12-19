@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Models\Tercero;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,7 +13,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        Tercero::factory()->times(10)->create();
+        // Create a root user for dev login.
+        
+        \App\Models\User::create([
+            'name' => 'root',
+            'email' => 'root@ciclismo.test',
+            'password' => bcrypt('password'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        // \App\Models\Tercero::factory()->times(10)->create();
     }
 }
