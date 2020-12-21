@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ auth()->user()->darktheme ? 'dark' : '' }}">
     <head>
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -23,7 +23,7 @@
         <style>
             .navbar {
                 overflow: hidden;
-                background-color: #333;
+                /* background-color: #333; */
             }
             .dropdown {
                 float: left;
@@ -42,13 +42,13 @@
             }
 
             .dropdown:hover .dropbtn {
-                background-color: red;
+                /* background-color: red; */
             }
 
             .dropdown-content {
                 display: none;
                 position: absolute;
-                background-color: #f9f9f9;
+                /* background-color: #f9f9f9; */
                 min-width: 160px;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
@@ -64,60 +64,33 @@
             }
 
             .dropdown-content a:hover {
-                background-color: #ddd;
+                /* background-color: #ddd; */
             }
 
             .dropdown:hover .dropdown-content {
                 display: block;
             }
-
-            /* Tooltip container */
-            .tooltip {
-            position: relative;
-            display: inline-block;
-            /* border-bottom: 1px dotted black; */ /* If you want dots under the hoverable text */
-            }
-
-            /* Tooltip text */
-            .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 120px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 6px;
-            
-            /* Position the tooltip text - see examples below! */
-            position: absolute;
-            z-index: 1;
-            }
-
-            /* Show the tooltip text when you mouse over the tooltip container */
-            .tooltip:hover .tooltiptext {
-            visibility: visible;
-            }
         </style>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen overflow-y-auto overflow-x-hidden" style="background-color:#222;">
+        <div class="min-h-screen overflow-y-auto overflow-x-hidden bg-legacyblue-600 dark:bg-black-200">
 
             <div class="flex">
                 <img src="{{ asset('images/Ciclismo-Banner1.png') }}">
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 pl-5 my-1 sm:-my-px sm:flex" style="padding-top:40px;">
-                    <div class="navbar">
+                    <div class="navbar bg-legacyblue-900 hover:bg-legacyblue-800 dark:bg-black-300 dark:hover:bg-red-500">
                         <x-dropdown-nav-menu>
                             <x-slot name="displayname">
                                 {{ __('Insumos') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
                                 {{ __('Categorias') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="{{ route('tercero.index') }}">
+                            <x-dropdown-nav-link href="{{ route('tercero.index') }}" class="hover:bg-legacygreen">
                                 {{ __('Terceros') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
@@ -127,15 +100,15 @@
                                 {{ __('Procesos') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.create') }}">
+                            <x-dropdown-nav-link href="{{ route('carrera.create') }}" class="hover:bg-legacygreen">
                                 {{ __('Nueva Carrera') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#">
+                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
                                 {{ __('Orden de salida') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#">
+                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
                                 {{ __('Orden de llegada') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
@@ -145,11 +118,11 @@
                                 {{ __('Informes') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}" class="hover:bg-legacygreen">
                                 {{ __('Carreras') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#">
+                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
                                 {{ __('Tiempos en Carreras') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
@@ -158,7 +131,7 @@
             </div>
 
             <!-- Page Heading -->
-            <header style="background-color:#333;">
+            <header class="bg-legacyblue-900 dark:bg-black-300">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>

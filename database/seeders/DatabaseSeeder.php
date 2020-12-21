@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'root',
             'email' => 'root@ciclismo.test',
             'password' => bcrypt('password'),
+            'darktheme' => true,
             'created_at' => now(),
             'updated_at' => now()
         ]);
