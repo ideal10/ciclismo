@@ -20,7 +20,7 @@ jobs:
         command: mysqld --default-authentication-plugin=mysql_native_password
         environment:
           MYSQL_USER: ciclismo
-          MYSQL_DATABASE: ciclismo
+          MYSQL_DATABASE: ciclismo_testing
           MYSQL_ROOT_PASSWORD: ''
           MYSQL_PASSWORD: 'ciclismo'
 
