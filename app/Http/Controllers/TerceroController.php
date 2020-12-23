@@ -93,12 +93,12 @@ class TerceroController extends Controller
         if($tercero->trashed())
         {
             $tercero->restore();
-            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" reactivado satisfactoriamente.');
+            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.' '.$tercero->primer_apellido.'" reactivado satisfactoriamente.');
         }
         else
         {
             $tercero->delete();
-            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" desactivado satisfactoriamente.');
+            return redirect()->route('tercero.index')->with('success', 'Tercero "'.$tercero->primer_nombre.' '.$tercero->primer_apellido.'" desactivado satisfactoriamente.');
         }
     }
 }
