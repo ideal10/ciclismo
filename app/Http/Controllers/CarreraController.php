@@ -36,7 +36,9 @@ class CarreraController extends Controller
      */
     public function store(Request $request)
     {
-        Carrera::create($request->all());
+        $carrera = Carrera::make($request->all());
+        $carrera->id_grupo = $request->user()->current_team_id;
+        $carrera->save();
 
         return redirect()->route('carrera.index')->with('success', 'Tercero creado satisfactoriamente.');
     }
@@ -72,11 +74,13 @@ class CarreraController extends Controller
      */
     public function update(Request $request, Carrera $carrera)
     {
+        /*
         $carrera->first_name = $request->first_name;
         $carrera->middle_name = $request->middle_name;
         $carrera->last_name = $request->last_name;
         $carrera->identification = $request->identification;
 
+        */
         $carrera->save();
     }
 
