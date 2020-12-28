@@ -77,7 +77,7 @@
                                     </thead>
                                     <tbody class="divide-y dark:divide-gray-500 bg-legacyblue-50 dark:bg-black-300">
                                         @foreach($terceros as $tercero)
-                                            <tr class="hover:bg-legacyblue-100">
+                                            <tr class="hover:bg-legacyblue-100 dark:hover:bg-black-400">
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class="text-sm dark:text-white">{{ $tercero->primer_nombre }}</div>
                                                     <div class="text-sm dark:text-gray-400">{{ $tercero->segundo_nombre }}</div>
@@ -100,7 +100,7 @@
                                                     @endif
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <div class="inline-flex dark:bg-black-300" style="width:160px;height:48px;">
+                                                    <div class="inline-flex" style="width:160px;height:48px;">
                                                         <a href="{{ route('tercero.edit', ['tercero' => $tercero]) }}" class="text-indigo-600 hover:text-indigo-900 mx-4">
                                                             <img src="{{ asset('images/icons/edit-file.png') }}" alt="{{ __('Editar') }}">
                                                         </a>
