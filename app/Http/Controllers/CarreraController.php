@@ -14,7 +14,8 @@ class CarreraController extends Controller
      */
     public function index()
     {
-        return view('db.carrera.index', ['carreras' => Carrera::all()]);
+        $carreras = Carrera::all();
+        return view('db.carrera.index', compact('carreras'));
     }
 
     /**
@@ -35,22 +36,9 @@ class CarreraController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        $request->validate([
-            'titulo' => 'required',
-            'subtitulo' => 'required',
-            'fecha_carrera' => 'required',
-            'lugar_inicio' => 'required',
-            'kilometros' => 'required',
-            'valor_inscripcion' => 'required'
-        ]);*/
+        Carrera::create($request->all());
 
-        $carrera = Carrera::make($request->all());
-        $carrera->id_grupo = $request->user()->currentTeam->id;
-        $carrera->save();
-
-        return redirect()->route('carrera.index')
-            ->with('success', 'Carrera Creada Satisfactoriamente.');
+        return redirect()->route('carrera.index')->with('success', 'Tercero creado satisfactoriamente.');
     }
 
     /**
@@ -61,18 +49,18 @@ class CarreraController extends Controller
      */
     public function show(Carrera $carrera)
     {
-        //
+        return view('db.carrera.show', ['carrera' => $carrera]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Carrera  $carrera
+     * @param  \App\Models\Tercero  $tercero
      * @return \Illuminate\Http\Response
      */
     public function edit(Carrera $carrera)
     {
-        //
+        return view('db.carrera.edit', ['carrera' => $carrera]);
     }
 
     /**
@@ -84,18 +72,23 @@ class CarreraController extends Controller
      */
     public function update(Request $request, Carrera $carrera)
     {
-        //
+        $carrera->first_name = $request->first_name;
+        $carrera->middle_name = $request->middle_name;
+        $carrera->last_name = $request->last_name;
+        $carrera->identification = $request->identification;
+
+        $carrera->save();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Carrera  $carrera
+     * @param  \App\Models\Carrera $carrera
      * @return \Illuminate\Http\Response
      */
     public function destroy(Carrera $carrera)
     {
         $carrera->delete();
-        return redirect()->route('carrera.index')->with('success', 'Tercero "'.$tercero->primer_nombre.'" desactivado satisfactoriamente.');
+        return redirect()->route('carrera.index')->with('success', 'Carrera "'.$carrera->titulo.'" eliminada satisfactoriamente.');
     }
 }
