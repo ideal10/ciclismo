@@ -25,7 +25,7 @@ class CarreraController extends Controller
      */
     public function create()
     {
-        return view('db.carrera.create');
+        return view('db.carrera.create', ['terceros' => \App\Models\Tercero::all()]);
     }
 
     /**
@@ -74,13 +74,15 @@ class CarreraController extends Controller
      */
     public function update(Request $request, Carrera $carrera)
     {
-        /*
-        $carrera->first_name = $request->first_name;
-        $carrera->middle_name = $request->middle_name;
-        $carrera->last_name = $request->last_name;
-        $carrera->identification = $request->identification;
+        $carrera->id_grupo          = $request->user()->team_id;
+        $carrera->fecha_carrera     = $request->fecha_carrera;
+        $carrera->titulo            = $request->titulo;
+        $carrera->subtitulo         = $request->subtitulo;
+        $carrera->lugar_inicio      = $request->lugar_inicio;
+        $carrera->lugar_fin         = $request->lugar_fin;
+        $carrera->kilometros        = $request->kilometros;
+        $carrera->valor_inscripcion = $request->valor_inscripcion;
 
-        */
         $carrera->save();
     }
 

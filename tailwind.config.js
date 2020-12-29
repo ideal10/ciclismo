@@ -19,6 +19,7 @@ module.exports = {
                     200: '#222',
                     300: '#333',
                     400: '#444',
+                    500: '#DDD',
                 },
                 legacyblue: {
                     50: '#EFF',     // Table.element1

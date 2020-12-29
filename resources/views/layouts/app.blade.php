@@ -80,17 +80,17 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 pl-5 my-1 sm:-my-px sm:flex" style="padding-top:40px;">
-                    <div class="navbar bg-legacyblue-900 hover:bg-legacyblue-800 dark:bg-black-300 dark:hover:bg-red-500">
+                    <div class="navbar">
                         <x-dropdown-nav-menu>
                             <x-slot name="displayname">
                                 {{ __('Insumos') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Categorias') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="{{ route('tercero.index') }}" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="{{ route('tercero.index') }}">
                                 {{ __('Terceros') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
@@ -100,15 +100,15 @@
                                 {{ __('Procesos') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.create') }}" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="{{ route('carrera.create') }}">
                                 {{ __('Nueva Carrera') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Orden de salida') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Orden de llegada') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>
@@ -118,11 +118,11 @@
                                 {{ __('Informes') }}
                             </x-slot>
 
-                            <x-dropdown-nav-link href="{{ route('carrera.index') }}" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="{{ route('carrera.index') }}">
                                 {{ __('Carreras') }}
                             </x-dropdown-nav-link>
 
-                            <x-dropdown-nav-link href="#" class="hover:bg-legacygreen">
+                            <x-dropdown-nav-link href="#">
                                 {{ __('Tiempos en Carreras') }}
                             </x-dropdown-nav-link>
                         </x-dropdown-nav-menu>

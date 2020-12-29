@@ -72,10 +72,10 @@ class TerceroController extends Controller
      */
     public function update(Request $request, Tercero $tercero)
     {
-        $tercero->first_name = $request->first_name;
-        $tercero->middle_name = $request->middle_name;
-        $tercero->last_name = $request->last_name;
-        $tercero->identification = $request->identification;
+        $tercero->first_name        = $request->first_name;
+        $tercero->middle_name       = $request->middle_name;
+        $tercero->last_name         = $request->last_name;
+        $tercero->identification    = $request->identification;
 
         $tercero->save();
     }
