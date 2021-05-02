@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Tercero;
+use DateInterval;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TerceroFactory extends Factory
@@ -23,16 +24,14 @@ class TerceroFactory extends Factory
     {
         return [
             'primer_nombre' => $this->faker->firstName,
-            'segundo_nombre' => $this->faker->firstName,
+            'segundo_nombre' => '',
             'primer_apellido' => $this->faker->lastName,
-            'segundo_apellido' => $this->faker->lastName,
+            'segundo_apellido' => '',
             'identificacion' => $this->faker->unique()->randomNumber(9, true),
             'tipo_identificacion' => 'Cédula de Ciudadania.',
             'telefono' => $this->faker->e164PhoneNumber(),
             'direccion' => $this->faker->address(),
-            'fecha_nacimiento' => $this->faker->date(),
-            
-
+            'fecha_nacimiento' => $this->faker->dateTimeBetween('-40 years', '-18 years', 'America/Bogota')
         ];
     }
 }
